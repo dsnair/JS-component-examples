@@ -10,7 +10,7 @@ class Article {
     this.article = article
 
     // 2. create a reference to the '.expandButton' class
-    this.expandButton = document.querySelector('.expandButton')
+    this.expandButton = article.querySelector('.expandButton')
 
     // 3. using your expandButton reference, update the text on your expandButton to say 'Expand'
     this.expandButton.innerHTML = 'Expand'
@@ -22,7 +22,6 @@ class Article {
   expandArticle() {
     // using our reference to 'article', toggle a LESS class to expand or hide the article
     this.article.classList.toggle('article-open')
-    console.log('hi')
   }
 }
 
