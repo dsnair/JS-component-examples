@@ -4,22 +4,26 @@ class TabLink {
     // assign this.link to the passed in DOM element
     this.link = link
 
-    // get the custom data attribute on the link
-    this.data = this.link.dataset.tab
+    /*
+    grab the value attached to 'data-tab', i.e. 1, 2, 3, 4
+    - 'data-tab' is a custom data attribute
+    - 'dataset.tab' gets all the 'data-' attributes that are named 'tab'
+    */
+    this.data = link.dataset.tab
+    console.log('DATA', this.data) // returns 1, 2, 3, 4
 
-    // using the custom data attribute get the associated item element
-    this.itemElement = document.querySelector(
-      `.tabs-item[data-tab='${this.data}']`
-    )
+    // get the 'div' associated to a 'data-tab'
+    this.dataDiv = document.querySelector(`.tabs-item[data-tab='${this.data}']`)
+    console.log('DATADIV', this.dataDiv)
 
-    // using the item element, create a new instance of the TabItem class
-    this.tabItem = new TabItem(this.itemElement)
+    // using dataDiv, create a new instance of the TabItem class
+    this.tabItem = new TabItem(this.dataDiv)
 
-    // add a click event listener on this instance, calling select() on click
-    this.link.addEventListener('click', () => this.select())
+    // add a click event listener on 'link', calling linkSelect() on click
+    link.addEventListener('click', () => this.linkSelect())
   }
 
-  select() {
+  linkSelect() {
     // get all of the elements with the '.tabs-link' class
     const links = document.querySelectorAll('.tabs-link')
 
@@ -29,19 +33,18 @@ class TabLink {
     // add a class named 'tabs-link-selected' to this link
     this.link.classList.add('tabs-link-selected')
 
-    // call select() on the item associated with this link
-    this.tabItem.select()
+    // call itemSelect() on 'tabItem'
+    this.tabItem.itemSelect()
   }
 }
 
-// create a sub-component
 class TabItem {
   constructor(tabItem) {
     // assign this.tabitem to the passed in element
     this.tabItem = tabItem
   }
 
-  select() {
+  itemSelect() {
     // select all '.tabs-item' elements from the DOM
     const items = document.querySelectorAll('.tabs-item')
 
