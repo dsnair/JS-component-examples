@@ -1,17 +1,11 @@
-# Newsfeed-Components
+# TABS-COMPONENTS
 
-In this project, we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you, you simply need to connect the pieces. After the CSS is connected, it is time to move on to building out our components using JavaScript. We will be adding common functionality and styling to build reusable components.
+Topics:
 
-### Need to know:
+- Constructors with ES6 class syntax
+- `data` attributes
 
-- CSS (LESS):
-  - @import
-- JavaScript:
-  - ES6 classes and the constructor function.
-- DOM
-  - Element selection
-  - Basic DOM manipulation
-  - Events and event listeners
+In this project, our design team has already built an HTML/CSS web page for us, our job is to add javascript functionality.
 
 ## Set Up The Project With Git
 
@@ -20,64 +14,45 @@ In this project, we are going to be building a news feed reader. The goal is to 
 - Create a forked copy of this project.
 - Add your project manager as collaborator on Github.
 - Clone your OWN version of the repository (Not Lambda's by mistake!).
-- Create a new branch: git checkout -b `<firstName-lastName>`.
+- Create a new branch: `git checkout -b <firstName-lastName>`.
 - Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- Push commits: git push origin `<firstName-lastName>`.
+- Push commits: `git push origin <firstName-lastName>`.
 
 **Follow these steps for completing your project.**
 
-- Submit a Pull-Request to merge <firstName-lastName> branch into master (student's Repo). **Please don't merge your own pull request**
-- Add your project manager as a reviewer on the pull-request
+- Submit a Pull Request to merge <firstName-lastName> branch into master (student's Repo). **Please don't merge your own pull request**
+- Add your project manager as a reviewer on the pull request.
 - Your project manager will count the project as complete by merging the branch back into master.
 
-### Preprocessor Setup
+## Description
 
-- Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder.
-- Open index.html in your browser
+### Part One (The Dropdown)
 
-### Part 1: The Menu
+- Once you load the page, you will notice a dropdown menu in the upper left side of the page. Currently,  when you click on it nothing happens. We will build out the functionality to allow a dropdown menu to open and close when a user clicks on the dropdown button.
+  - Study the HTML in the index.html file corresponding to the dropdown component.
+  - Study the LESS file in the Dropdown folder.
+  - With your knowledge of the HTML and CSS, complete the `Dropdown.js` file. You will be creating a dropdown component.
 
-- [x] Import `Menu.less` from the correct path into index.less. (Follow the example for `Header.less`, if you’re not sure how to write the correct path.)
-- [x] Follow the instructions found in the Menu.js file to complete the JavaScript functionality. NOTE: Start near the bottom of the page by looking for `const menu`.
+### Part Two (Tabs)
 
-### Part 2: The Articles Component
+- Now that we have an idea of how to create a component with a single class, we will be creating a complex component made up of itself and a sub-component. The greater component wrapper will be called `TabLink` and the smaller component it will create will be called `TabItem`.
 
-- [x] Import `Article.less` from the correct path into index.less. (Follow the example for `Header.less`, if you’re not sure how to write the correct path.)
-- [x] Follow the instructions found in the Articles.js file to complete the JavaScript functionality. NOTE: Start near the bottom of the page by looking for `let articles`.
+  - The `TabLink` component will be the overall wrapper of the sub component. This higher level component will find and create the sub component within it. This component will be on each of what we may consider the `tabs` on top of the box. These links will control the associated item, as well as selecting and deselecting themselves.
+  - The `TabItem` component will be the text displayed when a tab is selected. It will share a data attribute with it's corresponding tab, and should only show when it's tab has been selected.
 
-### Part 3: Add Articles
+- The `Tabs.js` file starts at the bottom of the page and then jumps around. Pay attention to what is being called and when. Study the corresponding HTML and LESS to get a better idea of how the tabs were built.
 
-- [x] Now that we have our components built, add a few articles of your own to the HTML. Notice how our JavaScript code automatically selects the new articles and adds the styling and functionality we just built to them. This is the power of components. Write the code once and add as many components as you want all while maintaining the functionality we built!
+- Once you have completed the above, add a couple Tabs to the HTML in order to see first hand how great building webpages with components is!
 
-### Stretch Goals:
+### Stretch Goals
 
-If you complete the main goals of the page let's play around with some cool animation libraries.
-
-A few things to check out:
-
-- Native CSS Animations.
-  - CSS has the ability to animate elements using a number of different properties. Check out `transform`, `transition`, and `animate`. A word of warning, these CSS properties will act differently on different browsers, so always read and see if you need a `browser prefix` in order to animate properly.
-  - https://css-tricks.com/almanac/properties/a/animation/
-- jQuery
-  - jQuery is an extremely popular JavaScript library. In fact, most of the native DOM manipulation we know and love came from the jQuery library. It is worth getting a little familiar with it. The jQuery library is massive, and part of it is an animation library. jQuery gives us a fantastic method called `.animate()`. There are also simpler methods such as `slideDown`, `slideUp`, `slideToggle`, `show`, `hide` and more.
-  - http://www.jquery.com
-- GSAP
-  - Greensock Animation Platform, is by far the most powerful of the three. It is intuitive and easy to use, and you will be amazed at the results.
-  - https://greensock.com/gsap
-
-Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
-
-- Animation: There are many ways to animate elements on the screen corresponding to user interactions. Read the documentation of the animation platform of your choice. Animate all of the components on click.
-
-  - Animation Goal #1. Animate the menu opening: You will need to change the CSS for the menu in order to achieve this. Get the menu to slide in from the left side of the screen, and slide out when the button is clicked. Bonus: Get the menu to slide back out when the user clicks anywhere on the screen other than the menu.
-  - Animation Goal #2. Animate the article opening: This one is a bit trickier. You will need to change the CSS for this component as well. Animate the component so that it slides open and slides closed on each click. Update the text in the expand button to read `'Click to Expand'` or `'Click to Close'` depending on the state of the article.
-
-- Close Button
-
-  Add a close (or 'read') button to each Article component. When clicked the article will disappear.
-
-- Component Constructor
-
-  Create a function that builds Article components. You are not expected to finish this. This goal is simply an exercise in thinking about how you would implement a function that took some data, created a new Article from it, and appended it to the HTML (without actually writing anything in the HTML file). This is a difficult concept to undertake, but even thinking about how you would implement it will give you a better understanding of how we use frameworks in upcoming sprints.
-
-- Implement a way to write your own articles using the Component Constructor and some input fields.
+- Create a Single `Tabs` component that creates all instances of `TabLink`. It will also hold the currently selected tab.
+  - Add a `deselect` method to each the `TabItem` and `TabLink` classes. This will deselect that specific tab.
+  - Remove the code deselecting all `TabLink`s and `TabItem`s, only relying on the deselect method.
+  - `Tabs` should deselect the currently selected tab each time a new tab is selected.
+- Animations. (Use the animation library of your choice)
+  - Get the dropdown to slide in and out, rather than just appearing and disappearing.
+  - Get the TabsItem text to fade in and out, or slide in and out.
+  - Look through the LESS code and see where you can refactor using animations to achieve similar results.
+- Add styling using the LESS files.
+- Remove the boxes on the top card and replace them with an image carousel. This will have to be done from scratch, and should be pretty difficult, but it uses the same techniques as the `Tabs` component. Give it a left and right button, and a number of images that scroll as the buttons are pressed.
