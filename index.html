@@ -1,190 +1,249 @@
-<!-- Do not add anything to the HTML until Part 3 of the project -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lambda School Newsfeed</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="./CSS/index.css"
-    />
-    <script src="./Menu/Menu.js" async></script>
-    <script src="./Article/Article.js" async></script>
+    <title>Lambda Times</title>
+    <link rel="stortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./components/Tabs/Tabs.js" async></script>
+    <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
   </head>
 
   <body>
+    <!-- TOP BAR COMPONENT -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="container-left"><span>TOPICS</span><span>SEARCH</span></div>
+        <div class="container-center">
+          <span>GENERAL</span><span>BROWNBAG</span><span>RANDOM</span
+          ><span>MUSIC</span><span>ANNOUNCEMENTS</span>
+        </div>
+        <div class="container-right">
+          <span>LOG IN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER COMPONENT -->
     <div class="header">
-      <img class="menu-button" src="./assets/menu.png" />
-      <h1>Lambda School Newsfeed</h1>
+      <span class="date">MARCH 8, 2019</span>
+      <h1>Lambda Times</h1>
+      <span class="temp">98°</span>
     </div>
 
-    <div class="menu">
-      <ul>
-        <li>Students</li>
-        <li>Faculty</li>
-        <li>What's New</li>
-        <li>Tech Trends</li>
-        <li>Music</li>
-        <li>Log Out</li>
-      </ul>
+    <!-- TABS COMPONENT -->
+    <div class="tabs">
+      <div class="topics">
+        <span class="title">TRENDING TOPICS:</span>
+        <div data-tab="all" class="tab active-tab">ALL</div>
+        <div data-tab="javascript" class="tab">JAVASCRIPT</div>
+        <div data-tab="technology" class="tab">TECHNOLOGY</div>
+        <div data-tab="node" class="tab">NODE.JS</div>
+        <div data-tab="jquery" class="tab">jQUERY</div>
+        <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
+      </div>
     </div>
 
-    <div class="articles">
-      <div class="article">
-        <h2>Lambda School Students: "We're the best!"</h2>
-        <p class="date">Nov 5th, 2017</p>
-        <p>
-          Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff
-          hutt organa twi'lek. Ben amidala secura skywalker lando moff wicket
-          tatooine luke. Solo wampa wampa calrissian yoda moff. Darth grievous
-          darth gonk darth hutt. Darth baba skywalker watto fett jango maul han.
-          Mon ewok sidious sidious lando kenobi grievous gamorrean solo. Yoda
-          wedge utapau darth calamari. Hutt calamari darth jabba. Darth dooku
-          amidala organa moff. Boba darth binks solo hutt skywalker dantooine
-          skywalker. Qui-gonn jar twi'lek jinn leia jango skywalker mon.
-        </p>
-        <p>
-          Grievous fett calamari anakin skywalker hutt. Alderaan darth kenobi
-          darth r2-d2 windu mothma. Sidious darth calamari moff. Wampa mothma
-          sith wedge solo mara. Darth gonk maul sith moff chewbacca palpatine
-          mace amidala. C-3po solo skywalker anakin yoda leia. Maul wampa bespin
-          watto jade ewok darth jabba. Lando dantooine moff k-3po dantooine
-          luke. Fisto mandalore darth wedge c-3p0 ahsoka. Secura moff palpatine
-          fett. Anakin sith darth darth. Moff solo leia ben ponda jade. Binks
-          jango aayla skywalker skywalker cade. Mustafar darth ventress anakin
-          watto. Yavin jawa sebulba owen jinn tatooine sith organa.
-        </p>
-        <p>
-          Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket
-          hutt coruscant sidious naboo ackbar tatooine. Hutt lars padmé darth.
-          Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba
-          wicket han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala.
-          Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia moff
-          calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth
-          palpatine obi-wan mon.
-        </p>
-        <span class="expandButton"></span>
+    <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
+    <!-- CAROUSEL COMPONENT -->
+    <!-- <div class="carousel">
+    <div class="left-button"><</div>
+    <img src="./assets/carousel/mountains.jpeg" />
+    <img src="./assets/carousel/computer.jpeg" />
+    <img src="./assets/carousel/trees.jpeg" />
+    <img src="./assets/carousel/turntable.jpeg" />
+    <div class="right-button">></div>
+  </div> -->
+
+    <!-- CARDS COMPONENT -->
+    <div class="cards-container">
+      <!-- CARD COMPONENTS -->
+      <div class="card" data-tab="javascript">
+        <div class="headline">
+          ES8: The Next Step in the Evolution of Javascript and What it Means
+          For Your Projects
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/sir.jpg" />
+          </div>
+          <span>By SIR RUFF'N'STUFF</span>
+        </div>
       </div>
 
-      <div class="article">
-        <h2>Javascript and You, ES6</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>
-          Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house
-          dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell
-          bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle
-          half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid
-          broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes
-          I must not tell lies. Mudbloods yew pumpkin juice phials Ravenclaw’s
-          Diadem 10 galleons Thieves Downfall. Ministry-of-Magic mimubulus
-          mimbletonia Pigwidgeon knut phoenix feather other minister Azkaban.
-          Hedwig Daily Prophet treacle tart full-moon Ollivanders You-Know-Who
-          cursed. Fawkes maze raw-steak Voldemort Goblin Wars snitch Forbidden
-          forest grindylows wool socks.
-        </p>
-        <p>
-          Boggarts lavender robes, Hermione Granger Fantastic Beasts and Where
-          to Find Them. Bee in your bonnet Hand of Glory elder wand, spectacles
-          House Cup Bertie Bott’s Every Flavor Beans Impedimenta. Stunning
-          spells tap-dancing spider Slytherin’s Heir mewing kittens Remus Lupin.
-          Palominos scarlet train black robes, Metamorphimagus Niffler dead easy
-          second bedroom. Padma and Parvati Sorting Hat Minister of Magic blue
-          turban remember my last.
-        </p>
-        <span class="expandButton"></span>
+      <div class="card" data-tab="javascript">
+        <div class="headline">
+          Type Coercion: Why Does NaN !== NaN? and Other Strange Occurrences
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/bones.jpg" />
+          </div>
+          <span>By BONES R. LIFE</span>
+        </div>
       </div>
 
-      <div class="article">
-        <h2>React vs Angular vs Vue</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>
-          Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Charmander Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Charizard Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Squirtle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Wartortle Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Blastoise Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Caterpie Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Metapod Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Butterfree Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Weedle Lorem ipsum dolor sit amet, consectetur adipiscing elit. Kakuna
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beedrill
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p>
-          Pidgey Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pidgeotto Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pidgeot Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Rattata Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Raticate Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Spearow Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Fearow Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ekans
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arbok Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit. Pikachu Lorem ipsum
-          dolor sit amet, consectetur adipiscing elit. Raichu Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Sandshrew Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Sandslash Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nidorina Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nidoqueen Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nidoran Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nidorino Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Nidoking Lorem ipsum
-        </p>
-        <span class="expandButton"></span>
+      <div class="card" data-tab="bootstrap">
+        <div class="headline">
+          Bootstrap 5: Get a Sneak Peak at all the New Features
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/fido.jpg" />
+          </div>
+          <span>By FIDO WALKSALOT</span>
+        </div>
       </div>
 
-      <div class="article">
-        <h2>Professional Software Development in 2018</h2>
-        <p class="date">Nov 7th, 2017</p>
-        <p>
-          Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor
-          hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor hodor.
-          Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor
-          HODOR hodor, hodor hodor?! Hodor hodor, hodor. Hodor hodor hodor hodor
-          hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor
-          hodor?
-        </p>
-        <p>
-          Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor
-          hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor
-          hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor
-          hodor! Hodor, hodor. Hodor. Hodor, HODOR hodor, hodor hodor, hodor,
-          hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor
-          hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor
-          hodor... Hodor hodor hodor hodor hodor?
-        </p>
-        <p>
-          Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor
-          hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor! Hodor hodor,
-          HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor
-          hodor, hodor, hodor hodor. Hodor, hodor. Hodor. Hodor, hodor, hodor.
-          Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR
-          hodor, hodor hodor. Hodor.
-        </p>
-        <p>
-          Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor
-          hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor; hodor hodor
-          hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor
-          hodor! Hodor, hodor. Hodor. Hodor, HODOR hodor, hodor hodor, hodor,
-          hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor
-          hodor hodor hodor?! Hodor hodor - hodor hodor hodor. Hodor. Hodor
-          hodor... Hodor hodor hodor hodor hodor?
-        </p>
-        <span class="expandButton"></span>
+      <div class="card" data-tab="technology">
+        <div class="headline">
+          AI: What Are the Ethical Ramifications of the Future?
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/max.jpg" />
+          </div>
+          <span>By MAX GOODBOYE</span>
+        </div>
       </div>
 
-      <div class="article">
-        <h2>Divya Nair</h2>
-        <p class="date">Mar 6th, 2019</p>
-        <p>
-          Today is a rainy day in Oakland.
-        </p>
-        <span class="expandButton"></span>
+      <div class="card" data-tab="jquery">
+        <div class="headline">
+          History of Javascript Libraries: from jQuery to React
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/puppers.jpg" />
+          </div>
+          <span>By PUPPER S. DOGGO</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="bootstrap">
+        <div class="headline">
+          UI Frameworks: A Comparison, Which Made Our List? (Hint: Bootstrap is
+          on it)
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/max.jpg" />
+          </div>
+          <span>By MAX GOODBOYE</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="node">
+        <div class="headline">
+          Node.js in 2018: Which Framework? Express, Sails, Hapi?
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/sir.jpg" />
+          </div>
+          <span>By SIR RUFF'N'STUFF</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="node">
+        <div class="headline">
+          MongoDB: NoSQL vs. SQL, the Debate Continues...
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/bones.jpg" />
+          </div>
+          <span>By BONES R. LIFE</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="jquery">
+        <div class="headline">
+          jQuery Animations: When and Where to Use Them, and Not CSS
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/fido.jpg" />
+          </div>
+          <span>By FIDO WALKSALOT</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="technology">
+        <div class="headline">
+          AR or VR: How We Will See the World Through a Digital Lense
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/max.jpg" />
+          </div>
+          <span>By MAX GOODBOYE</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="javascript">
+        <div class="headline">
+          When to Rest, When to Spread: Why There Are Two Meanings Behind '...'
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/puppers.jpg" />
+          </div>
+          <span>By PUPPER S. DOGGO</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="javascript">
+        <div class="headline">
+          Typescript: Ten Things you Should Know Before Building Your Next
+          Angular Application
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/sir.jpg" />
+          </div>
+          <span>By SIR RUFF'N'STUFF</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="technology">
+        <div class="headline">
+          Quantum Computing: Where we Are Now, and Where We Will Be Very Soon
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/max.jpg" />
+          </div>
+          <span>By MAX GOODBOYE</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="jquery">
+        <div class="headline">
+          Why I Use jQuery in Every Application I Create and Why You Should Too
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/fido.jpg" />
+          </div>
+          <span>By FIDO WALKSALOT</span>
+        </div>
+      </div>
+
+      <div class="card" data-tab="bootstrap">
+        <div class="headline">
+          The Hottest New Bootstrap 4 Components Every Developer Needs to Know
+          About
+        </div>
+        <div class="author">
+          <div class="img-container">
+            <img src="./assets/max.jpg" />
+          </div>
+          <span>By MAX GOODBOYE</span>
+        </div>
       </div>
     </div>
   </body>

@@ -1,83 +1,65 @@
-# Newsfeed-Components
+# Sprint-Challenge Applied Javascript - Lambda Times
 
-In this project, we are going to be building a news feed reader. The goal is to have a collapsing menu, and expandable news articles. The HTML and CSS is already done for you, you simply need to connect the pieces. After the CSS is connected, it is time to move on to building out our components using JavaScript. We will be adding common functionality and styling to build reusable components.
+This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint explored the DOM and the concept of components. During this Sprint, you studied the DOM, DOM Events, and Components. In your challenge this week, you will demonstrate proficiency by creating an online Lambda newspaper called "Lambda Times."
 
-### Need to know:
+## Instructions
 
-- CSS (LESS):
-  - @import
-- JavaScript:
-  - ES6 classes and the constructor function.
-- DOM
-  - Element selection
-  - Basic DOM manipulation
-  - Events and event listeners
+**Read these instructions carefully. Understand exactly what is expected _before_ starting this Sprint Challenge.**
 
-## Set Up The Project With Git
+This is an individual assessment. All work must be your own. Your challenge score is a measure of your ability to work independently using the material covered through this sprint. You need to demonstrate proficiency in the concepts and objectives introduced and practiced in preceding days.
 
-**Follow these steps to set up and work on your project:**
+You are not allowed to collaborate during the Sprint Challenge. However, you are encouraged to follow the twenty-minute rule and seek support from your PM and instructor in your cohort help channel on Slack. Your work reflects your proficiency in Applied JavaScript.
 
-- Create a forked copy of this project.
-- Add your project manager as collaborator on Github.
-- Clone your OWN version of the repository (Not Lambda's by mistake!).
-- Create a new branch: git checkout -b `<firstName-lastName>`.
-- Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- Push commits: git push origin `<firstName-lastName>`.
+You have three hours to complete this challenge. Plan your time accordingly.
 
-**Follow these steps for completing your project.**
+## Commits
 
-- Submit a Pull-Request to merge <firstName-lastName> branch into master (student's Repo). **Please don't merge your own pull request**
-- Add your project manager as a reviewer on the pull-request
-- Your project manager will count the project as complete by merging the branch back into master.
+Commit your code regularly and meaningfully. This helps both you (in case you ever need to return to old code for any number of reasons) and your project manager.
 
-### Preprocessor Setup
+## Description
 
-- Run `less-watch-compiler less css index.less` from the top level of the Newsfeed-Components folder.
-- Open index.html in your browser
+You are going to create a Lambda Newspaper. Your job is going to be to add functionality to the tabs below the 'Lambda Times' logo. These tabs will act as filters for our articles, and when clicked on, should filter out all articles except those with that tag.
 
-### Part 1: The Menu
+![Working Sprint Challenge Gif](./Sprint-Challenge.gif 'Example of working project')
 
-- [x] Import `Menu.less` from the correct path into index.less. (Follow the example for `Header.less`, if you’re not sure how to write the correct path.)
-- [x] Follow the instructions found in the Menu.js file to complete the JavaScript functionality. NOTE: Start near the bottom of the page by looking for `const menu`.
+In meeting the minimum viable product (MVP) specifications listed below, you should have a console full of correct responses to the problems given.
 
-### Part 2: The Articles Component
+## Self-Study Questions
 
-- [x] Import `Article.less` from the correct path into index.less. (Follow the example for `Header.less`, if you’re not sure how to write the correct path.)
-- [x] Follow the instructions found in the Articles.js file to complete the JavaScript functionality. NOTE: Start near the bottom of the page by looking for `let articles`.
+Demonstrate your understanding of this week's concepts by answering the following free-form questions.
 
-### Part 3: Add Articles
+Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [x] Now that we have our components built, add a few articles of your own to the HTML. Notice how our JavaScript code automatically selects the new articles and adds the styling and functionality we just built to them. This is the power of components. Write the code once and add as many components as you want all while maintaining the functionality we built!
+1. What is the DOM?
 
-### Stretch Goals:
+2. What is an event?
 
-If you complete the main goals of the page let's play around with some cool animation libraries.
+3. What is an event listener?
 
-A few things to check out:
+4. Why would we convert a NodeList into an Array?
 
-- Native CSS Animations.
-  - CSS has the ability to animate elements using a number of different properties. Check out `transform`, `transition`, and `animate`. A word of warning, these CSS properties will act differently on different browsers, so always read and see if you need a `browser prefix` in order to animate properly.
-  - https://css-tricks.com/almanac/properties/a/animation/
-- jQuery
-  - jQuery is an extremely popular JavaScript library. In fact, most of the native DOM manipulation we know and love came from the jQuery library. It is worth getting a little familiar with it. The jQuery library is massive, and part of it is an animation library. jQuery gives us a fantastic method called `.animate()`. There are also simpler methods such as `slideDown`, `slideUp`, `slideToggle`, `show`, `hide` and more.
-  - http://www.jquery.com
-- GSAP
-  - Greensock Animation Platform, is by far the most powerful of the three. It is intuitive and easy to use, and you will be amazed at the results.
-  - https://greensock.com/gsap
+5. What is a component?
 
-Note: Just a reminder the stretch goals are just extra practice using the tools we have learned. These are not required. Only parts 1-3 are required portions of the project. If you do not get to the stretch goals, don't worry.
+### Git Set-up
 
-- Animation: There are many ways to animate elements on the screen corresponding to user interactions. Read the documentation of the animation platform of your choice. Animate all of the components on click.
+- Fork the project into your GitHub user account.
+- Clone the forked project into a directory on your machine.
+- Create a pull request before you start working on the project requirements. You will continuously push your updates throughout the project.
+- You are now ready to build this project with your preferred IDE.
 
-  - Animation Goal #1. Animate the menu opening: You will need to change the CSS for the menu in order to achieve this. Get the menu to slide in from the left side of the screen, and slide out when the button is clicked. Bonus: Get the menu to slide back out when the user clicks anywhere on the screen other than the menu.
-  - Animation Goal #2. Animate the article opening: This one is a bit trickier. You will need to change the CSS for this component as well. Animate the component so that it slides open and slides closed on each click. Update the text in the expand button to read `'Click to Expand'` or `'Click to Close'` depending on the state of the article.
+## Minimum Viable Product
 
-- Close Button
+Your finished project must include all of the following requirements:
 
-  Add a close (or 'read') button to each Article component. When clicked the article will disappear.
+- Look through the HTML code paying particular attention to the Tabs component and the Cards components. You will notice they share a data attribute. We will be using this data attribute to determine which cards should show when each tab is selected.
+- [ ] Following the instructions in the `Tabs.js` file, complete the `TabLink`, and `TabCard` class components. It will look and feel very similar to the last project we worked on, but with a twist. Now, instead of one `Item` to display, we will need to display a collection of `Cards`. Think about ways to iterate over an array and manipulate each item. **Note: You will need to un-comment the code after the lines of instructions. The code is commented out so you can work error-free**
+- [ ] Once you get your `Tab` component working properly add a couple more articles yourself and check out how it works.
 
-- Component Constructor
+## Stretch Problems
 
-  Create a function that builds Article components. You are not expected to finish this. This goal is simply an exercise in thinking about how you would implement a function that took some data, created a new Article from it, and appended it to the HTML (without actually writing anything in the HTML file). This is a difficult concept to undertake, but even thinking about how you would implement it will give you a better understanding of how we use frameworks in upcoming sprints.
+Your stretch challenge is to write the functionality of a `Carousel` component. You have the HTML and CSS already in place, simply un-comment the HTML in the `index.html` file. This is an advanced challenge, so you are not expected to be able to complete it. If you begin and don't finish, you should still submit with what you have. You may reference the `Tabs.js` file for assistance.
 
-- Implement a way to write your own articles using the Component Constructor and some input fields.
+- Complete the carousel functionality in `Carousel.js`.
+- If you complete the Carousel, add functionality so that the carousel slides when the buttons are pressed instead of just appearing.
+- Create an 'infinite loop' carousel, in which as long as you click on an arrow, the array of images will loop over itself.
+- If you have finished the above, play around with the styling on all the components, and understand how each is built.
