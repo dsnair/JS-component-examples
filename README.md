@@ -32,13 +32,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+> DOM (Document Object Model) arranges the tags in a markup languages, such as HTML or XML, as a tree structure.
+
 2. What is an event?
+
+> An event is any interaction that a user has with your app.
 
 3. What is an event listener?
 
+> An event listener is a function that fires when an event is triggered.
+
 4. Why would we convert a NodeList into an Array?
 
+> NodeList are array-like and lack many methods provided by Array, such as `.map()`.
+
 5. What is a component?
+
+> Components are the smallest, independent, reusable UI pieces within an app.
 
 ### Git Set-up
 
